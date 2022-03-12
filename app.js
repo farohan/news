@@ -8,10 +8,12 @@ function fetchNews(event) {
     newsList.innerHTML = '';
 
     event.preventDefault();
+    
+    const proxyURL = 'https://cors-anywhere.herokuapp.com/';
 
     const apiKey = 'f313cdf16b64452880ae491885947b6e';
     const searchTopic = input.value;
-    const url = `https://newsapi.org/v2/everything?q=${searchTopic}&apiKey=${apiKey}`;
+    const url = `${proxyURL}https://newsapi.org/v2/everything?q=${searchTopic}&apiKey=${apiKey}`;
 
     console.log(searchTopic);
     console.log(url);
